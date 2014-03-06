@@ -3,6 +3,7 @@ package ;
 import flash.display.Sprite;
 import flash.events.Event;
 import flash.Lib;
+import flash.events.
 
 /**
  * ...
@@ -10,8 +11,9 @@ import flash.Lib;
  */
 
 class Main extends Sprite 
-{
+{	
 	var inited:Bool;
+	public var game:Game;
 
 	/* ENTRY POINT */
 	
@@ -25,6 +27,12 @@ class Main extends Sprite
 	{
 		if (inited) return;
 		inited = true;
+		
+		game = new Game();
+		this.addChild(game);
+		
+		Lib.current.stage.addEventListener(
+		
 
 		// (your code here)
 		
@@ -52,6 +60,13 @@ class Main extends Sprite
 		#else
 		init();
 		#end
+	}
+	
+	public static function atRefresh()
+	{
+		
+		
+		
 	}
 	
 	public static function main() 
