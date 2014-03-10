@@ -3,7 +3,7 @@ package ;
 import flash.display.Sprite;
 import flash.events.Event;
 import flash.Lib;
-import flash.events.
+import flash.events.KeyboardEvent;
 
 /**
  * ...
@@ -13,7 +13,7 @@ import flash.events.
 class Main extends Sprite 
 {	
 	var inited:Bool;
-	public var game:Game;
+	public var newGame:Game;
 
 	/* ENTRY POINT */
 	
@@ -28,12 +28,9 @@ class Main extends Sprite
 		if (inited) return;
 		inited = true;
 		
-		game = new Game();
-		this.addChild(game);
+		newGame = new Game();
+		this.addChild(newGame);
 		
-		Lib.current.stage.addEventListener(
-		
-
 		// (your code here)
 		
 		// Stage:
