@@ -33,11 +33,12 @@ class Game extends Sprite
 	
 	public function act(e : Event) :Void
 	{
-		keys.push(e.keyCode);
+		trace(keyCode);
 		com.move();
-		if (keyCheck('A'.charCodeAt(0))) game.com.moveLeft();
-		if (keyCheck('D'.charCodeAt(0))) game.com.moveRight();
-		if (keyCheck('W'.charCodeAt(0))) game.com.jump();
+		//if (! keyCheck(e.keyCode)) keys.push(e.keyCode);
+		//if (keyCheck('A'.charCodeAt(0))) game.com.moveLeft();
+		//if (keyCheck('D'.charCodeAt(0))) game.com.moveRight();
+		//if (keyCheck('W'.charCodeAt(0))) game.com.jump();
 	}
 	
 	public function keyCheck(v:Int) : Bool
