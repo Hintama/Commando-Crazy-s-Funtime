@@ -33,21 +33,21 @@ class Commando extends Sprite
 		}
 		this.y += this.vy;
 		this.vy += .2;
-		//this.vy *= .92;
+		this.vy *= .98;
 		this.x += this.vx;
-		//this.vx *= .8;
-		trace (vx);
+		this.vx *= .94;
+		//trace (vx);
 		//trace (vy);
 	}
 	
 	public function moveLeft()
 	{
-		this.vx -= .4;
+		this.vx -= 1.8;
 	}
 	
 	public function moveRight()
 	{
-		this.vx += .4;
+		this.vx += 1.8;
 	}
 	
 	public function jump()
