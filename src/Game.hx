@@ -19,9 +19,9 @@ class Game extends Sprite
 	public function new() 
 	{
 		super();
+		game = this;
 		com = new Commando();
 		this.addChild(com);
-		game = this;
 		tracks = new Array<Platform>();
 		var track = new Platform(10, 400, 1000, 10);
 		tracks.push(track);
@@ -33,9 +33,11 @@ class Game extends Sprite
 	
 	public function act(e : Event) :Void
 	{
+		keys.push(e.keyCode);
 		com.move();
-		if (keyCheck('A'.charCodeAt(0))) com.moveLeft;
-		if (keyCheck('D'.charCodeAt(0))) com.moveRight;
+		if (keyCheck('A'.charCodeAt(0))) game.com.moveLeft();
+		if (keyCheck('D'.charCodeAt(0))) game.com.moveRight();
+		if (keyCheck('W'.charCodeAt(0))) game.com.jump();
 	}
 	
 	public function keyCheck(v:Int) : Bool

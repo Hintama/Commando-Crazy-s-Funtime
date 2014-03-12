@@ -17,9 +17,10 @@ class Commando extends Sprite
 		//var img = new Bitmap(Assests.getBitmapData("img/));
 		this.graphics.beginFill(0xFFFFFF);
 		this.graphics.drawEllipse(0, 0, 40, 35);
-		this.x = 200;
+		this.x = 300;
 		this.y = 200;
 		vy = 0;
+		vx = 0;
 		
 	}
 	
@@ -31,11 +32,12 @@ class Commando extends Sprite
 			this.vy = 0;
 		}
 		this.y += this.vy;
-		this.vy += .1;
+		this.vy += .2;
+		//this.vy *= .92;
 		this.x += this.vx;
-		this.vx *= .8;
+		//this.vx *= .8;
 		trace (vx);
-		trace (vy);
+		//trace (vy);
 	}
 	
 	public function moveLeft()
