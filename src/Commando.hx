@@ -41,33 +41,30 @@ class Commando extends Sprite
 		{
 			grav = -.22;
 		}
-		else
+		if (!(up))
 		{
 			grav = .22;
 		}
 		if (isColliding())
 		{
+			this.vy = 0;
 			grav = 0;
 		}
-		if (isColliding())
-		{
-			this.y -= this.vy;
-			this.vy = 0;
-		}
-		this.y += this.vy;
 		this.vy += grav;
+		this.y += this.vy;
 		this.vy *= .98;
 		this.x += this.vx;
 		this.vx *= .98;
 		if (vx < 1.5)
 		{
-			vx = 1.53;
+			vx = 1.5;
 		}
 		//trace (vx);
 		//trace (vy);
 		//trace (up);
 		//trace (grav);
 		//trace (up);
+		//trace (isColliding());
 	}
 	
 	public function moveLeft()
@@ -95,12 +92,11 @@ class Commando extends Sprite
 	
 	public function fall()
 	{
-		grav = -grav;
-		if ((onGround()) && !(up))
+		if ((isColliding()) && !(up))
 		{
 			this.y = this.y + 50;
 		}
-		if ((onGround()) && (up))
+		if ((isColliding()) && (up))
 		{
 			this.y = this.y - 50;
 		}
@@ -109,7 +105,6 @@ class Commando extends Sprite
 	
 	public function isColliding()
 	{
-
 		for (track in Game.game.tracks)
 		{
 			if (this.hitTestObject(track))
@@ -120,12 +115,12 @@ class Commando extends Sprite
 		return false;
 	}
 	
-	public function onGround()
+/*	public function onGround()
 	{
-		if (isColliding()) return false;
+		//if (isColliding()) return false;
 		this.y += .5;
 		var hit = isColliding();
 		this.y -= .5;
 		return hit;
-	}
+	}*/
 }

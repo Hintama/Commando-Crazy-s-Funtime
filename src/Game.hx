@@ -47,7 +47,7 @@ class Game extends Sprite
 		com.move();	
 		this.x = - game.com.x + 150;
 		count ++;
-		if (count % 3 == 0)
+		if (count % 6 == 0)
 		{
 			for (track in tracks)
 			{
@@ -66,7 +66,11 @@ class Game extends Sprite
 			var track = new Platform(game.com.x - 150, 75, 1000, 10);
 			tracks.push(track);
 			this.addChild(track);
+			var track = new Platform(game.com.x + 150, 20, 100, 10);
+			tracks.push(track);
+			this.addChild(track);
 			count = 0;
+			//trace (game.tracks.length);
 		}
 		
 	}
