@@ -18,4 +18,9 @@ class Platform extends Sprite
 		this.y = y;
 	}
 	
+	public function disappear()
+	{
+		this.graphics.beginFill(0xFFCC33);
+	}
+	
 }

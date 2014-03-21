@@ -36,10 +36,14 @@ class DefaultAssetLibrary extends AssetLibrary {
 		
 		#if flash
 		
+		className.set ("img/commando.png", __ASSET__img_commando_png);
+		type.set ("img/commando.png", Reflect.field (AssetType, "image".toUpperCase ()));
 		
 		
 		#elseif html5
 		
+		path.set ("img/commando.png", "img/commando.png");
+		type.set ("img/commando.png", Reflect.field (AssetType, "image".toUpperCase ()));
 		
 		
 		#else
@@ -483,9 +487,11 @@ class DefaultAssetLibrary extends AssetLibrary {
 #if pixi
 #elseif flash
 
+class __ASSET__img_commando_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
 
 
 #elseif html5
+
 
 
 
