@@ -6,7 +6,7 @@
 -D web
 -swf-version 11.2
 -swf bin/flash/bin/CommandoCrazysFuntime.swf
--swf-header 800:480:60:FFCC33
+-swf-header 800:480:60:00FF44
 -cp bin/flash/haxe
 #--remap nme:flash
 --no-inline

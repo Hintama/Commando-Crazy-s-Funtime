@@ -20,7 +20,7 @@ class Commando extends Sprite
 	public function new() 
 	{
 		super();
-		var img = new Bitmap(Assets.getBitmapData("img/commando.png"));
+		var img = new Bitmap(Assets.getBitmapData("img/commando2.png"));
 		sprite = new Sprite();
 		sprite.addChild(img);
 		this.addChild(sprite);
@@ -55,9 +55,10 @@ class Commando extends Sprite
 		this.vy *= .98;
 		this.x += this.vx;
 		this.vx *= .98;
-		if (vx < 1.5)
+		if (vx < 1.7)
 		{
-			vx = 1.5;
+			vx = 1.7;
+			//vx = .5;
 		}
 		//trace (vx);
 		//trace (vy);
@@ -83,22 +84,24 @@ class Commando extends Sprite
 		if (!(up))
 		{
 			up = true;
+			this.rotation = 180;
 		}
 		else
 		{
 			up = false;
+			this.rotation = 0;
 		}
 	}
 	
 	public function fall()
 	{
-		if ((isColliding()) && !(up))
+		if (!(up))
 		{
-			this.y = this.y + 50;
+			this.y = this.y + 86;
 		}
-		if ((isColliding()) && (up))
+		if ((up))
 		{
-			this.y = this.y - 50;
+			this.y = this.y - 86;
 		}
 		this.swtch();
 	}

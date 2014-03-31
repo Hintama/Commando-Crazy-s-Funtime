@@ -3,6 +3,7 @@ import flash.display.Sprite;
 import flash.events.Event;
 import flash.Lib;
 import flash.events.KeyboardEvent;
+import haxe.rtti.CType.Platforms;
 
 
 /**
@@ -14,27 +15,33 @@ class Game extends Sprite
 	public var com:Commando;
 	public static var game:Game;
 	public var tracks:List<Platform>;
+	public var badguys:List<Enemy>;
 	var keys:Array<Int>;
 	var count:Int;
+	var time:Int;
+	var rand:Float;
+	//var comx:Float;
 	
 	public function new() 
 	{
 		super();
 		game = this;
 		count = 0;
+		time = 0;
 		com = new Commando();
 		this.addChild(com);
 		tracks = new List<Platform>();
-		var track = new Platform(10, 400, 1000, 10);
+		badguys = new List<Enemy>();
+		var track = new Platform(10, 400, 1400, 10);
 		tracks.push(track);
 		this.addChild(track);
-		var track = new Platform(game.com.x, 300, 1000, 10);
+		var track = new Platform(game.com.x, 300, 1400, 10);
 		tracks.push(track);
 		this.addChild(track);
-		var track = new Platform(game.com.x, 200, 1000, 10);
+		var track = new Platform(game.com.x, 200, 1400, 10);
 		tracks.push(track);
 		this.addChild(track);
-		var track = new Platform(game.com.x, 100, 1000, 10);
+		var track = new Platform(game.com.x, 100, 1400, 10);
 		tracks.push(track);
 		this.addChild(track);
 		Lib.current.stage.addEventListener(KeyboardEvent.KEY_DOWN, keyCheck);
@@ -45,34 +52,55 @@ class Game extends Sprite
 	public function act(e : Event) :Void
 	{
 		com.move();	
+		time--;
 		this.x = - game.com.x + 150;
-		count ++;
-		if (count % 6 == 0)
+		rand = Math.random();
+		//game.comx = game.com.x;
+		//game.comx = game.comx - (game.comx % 1);
+		if ((count % 15 == 0) && (time < 0))
 		{
 			for (track in tracks)
 			{
 				game.removeChild(track);
 			}
 			tracks.clear();
-			var track = new Platform(game.com.x - 150, 375, 1000, 10);
+			var track = new Platform(game.com.x - 150, 375, 1800, 10);
 			tracks.push(track);
 			this.addChild(track);
-			var track = new Platform(game.com.x - 150, 275, 1000, 10);
+			var track = new Platform(game.com.x - 150, 275, 1800, 10);
 			tracks.push(track);
 			this.addChild(track);
-			var track = new Platform(game.com.x - 150, 175, 1000, 10);
+			var track = new Platform(game.com.x - 150, 175, 1800, 10);
 			tracks.push(track);
 			this.addChild(track);
-			var track = new Platform(game.com.x - 150, 75, 1000, 10);
+			var track = new Platform(game.com.x - 150, 75, 1800, 10);
 			tracks.push(track);
 			this.addChild(track);
-			var track = new Platform(game.com.x + 150, 20, 100, 10);
-			tracks.push(track);
-			this.addChild(track);
+			//var track = new Platform(game.com.x + 150, 20, 100, 10);
+			//tracks.push(track);
+			//this.addChild(track);
 			count = 0;
+			time = 20;
 			//trace (game.tracks.length);
 		}
 		
+		rand = rand * 100;
+		if (rand > 97)
+		{
+			var badguy = new Enemy();
+			badguys.push(badguy);
+			this.addChild(badguy);
+			//trace(rand);
+		}
+		count++;
+		
+		for (badguy in badguys)
+		{
+			if (badguy.x < com.x - 300)
+			{
+				badguys.remove(badguy);
+			}
+		}
 	}
 	
 	public function keyCheck(e : KeyboardEvent)
