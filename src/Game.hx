@@ -19,20 +19,24 @@ class Game extends Sprite
 	public var tracks:List<Platform>;
 	public var badguys:List<Enemy>;
 	public var diff:Float;
+	var backgroundcounter:Int;
 	var keys:Array<Int>;
 	var count:Int;
 	var time:Int;
 	var rand:Float;
+	var v:Int;
 	
 	public function new() 
 	{
 		super();
 		game = this;
 		diff = 0.1;
+		v = -100;
 		count = 0;
 		time = 0;
+		backgroundcounter = 0;
 		backgrounds = new List<Background>();
-		generateBackground();
+		generateBackground(v);
 		com = new Commando();
 		this.addChild(com);
 		tracks = new List<Platform>();
@@ -113,6 +117,27 @@ class Game extends Sprite
 		//var track = new Platform(game.com.x + 150, 20, 100, 10);
 		//tracks.push(track);
 		//this.addChild(track);
+	}
+	
+	public function backgroundSpawn()
+	{
+		if ((((com.x + 800) % 800 = 0) && (backgroundcounter < 0)) || (((Game.game.com.x + 801) % 800 = 0) && (backgroundcounter < 0)) || (((Game.game.com.x + 799 % 800) = 0) && (backgroundcounter < 0)))
+		{
+			v = com.x + 800;
+			generateBackground(v);
+			backgroundcounter = 25;
+		}
+		backgroundcounter--;
+	}
+	
+	public function generateBackground(v:Int)
+	{
+		background = new Background();
+		if (com.x == 0)
+		{
+			background.x = -100;
+		}
+		this.addChild(background);
 	}
 	
 	public function diffCount()

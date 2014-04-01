@@ -10,7 +10,6 @@ import openfl.Assets;
  */
 class Background extends Sprite
 {
-
 	var img:BitmapData;
 	var sprite:Sprite;
 	
@@ -21,18 +20,6 @@ class Background extends Sprite
 		sprite = new Sprite();
 		sprite.addChild(img);
 		this.addChild(sprite);
-	}
-	
-	public function act();
-	{
-		
-	}
-	
-	public function generateBackground()
-	{
-		background = new Background();
-		background.x = -100;
-		this.addChild(background);
 	}
 	
 }
