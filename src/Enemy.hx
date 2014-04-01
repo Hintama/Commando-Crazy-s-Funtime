@@ -32,7 +32,7 @@ class Enemy extends Sprite
 	function findY()
 	{
 		ra = Math.random();
-		ra = ra * 8;
+		ra = ra * 6;
 		if (ra < 1)
 		{
 			this.y = 39;
@@ -43,25 +43,25 @@ class Enemy extends Sprite
 		}
 		if ((ra > 2) && (ra < 3))
 		{
-			this.y = 139;
+			this.y = 189;
 		}
 		if ((ra > 3) && (ra < 4))
 		{
-			this.y = 222;
+			this.y = 272;
 		}
-		if ((ra > 4) && (ra < 5))
+		/*if ((ra > 4) && (ra < 5))
 		{
 			this.y = 239;
 		}
 		if ((ra > 5) && (ra < 6))
 		{
 			this.y = 322;
-		}
-		if ((ra > 6) && (ra < 7))
+		}*/
+		if ((ra > 4) && (ra < 5))
 		{
 			this.y = 339;
 		}
-		if (ra > 7)
+		if (ra > 5)
 		{
 			this.y = 422;
 		}
@@ -75,9 +75,12 @@ class Enemy extends Sprite
 		}
 	}
 	
-	public function kill()
+	public function hit()
 	{
-	
+		if (this.hitTestObject(Game.game.com))
+		{
+			trace("dead");
+		}
 	}
 	
 	public function die()

@@ -65,6 +65,14 @@ class Commando extends Sprite
 		{
 			vx = 3.2 + (Game.game.diff * 1.7);
 		}
+		if (this.y > 480)
+		{
+			this.y = 0;
+		}
+		if (this.y < 0)
+		{
+			this.y = 480;
+		}
 		//trace (vx);
 		//trace (vy);
 		//trace (up);

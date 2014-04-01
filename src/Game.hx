@@ -13,6 +13,8 @@ import haxe.rtti.CType.Platforms;
 class Game extends Sprite
 { 
 	public var com:Commando;
+	public var background:Background;
+	public var backgrounds:List<Background>;
 	public static var game:Game;
 	public var tracks:List<Platform>;
 	public var badguys:List<Enemy>;
@@ -29,6 +31,8 @@ class Game extends Sprite
 		diff = 0.1;
 		count = 0;
 		time = 0;
+		backgrounds = new List<Background>();
+		generateBackground();
 		com = new Commando();
 		this.addChild(com);
 		tracks = new List<Platform>();
@@ -42,6 +46,10 @@ class Game extends Sprite
 	public function act(e : Event) :Void
 	{
 		com.move();	
+		for (badguy in badguys)
+		{
+			badguy.hit();
+		}
 		time--;
 		diffCount();
 		this.x = - game.com.x + 150;
@@ -87,17 +95,18 @@ class Game extends Sprite
 		if (e.keyCode == 83) game.com.fall();
 	}
 	
+	
 	public function generateTracks()
 	{
 		var track = new Platform(game.com.x - 150, 375, 1800, 10);
 		tracks.push(track);
 		this.addChild(track);
-		var track = new Platform(game.com.x - 150, 275, 1800, 10);
+		var track = new Platform(game.com.x - 150, 225, 1800, 10);
 		tracks.push(track);
 		this.addChild(track);
-		var track = new Platform(game.com.x - 150, 175, 1800, 10);
+		/*var track = new Platform(game.com.x - 150, 175, 1800, 10);
 		tracks.push(track);
-		this.addChild(track);
+		this.addChild(track);*/
 		var track = new Platform(game.com.x - 150, 75, 1800, 10);
 		tracks.push(track);
 		this.addChild(track);

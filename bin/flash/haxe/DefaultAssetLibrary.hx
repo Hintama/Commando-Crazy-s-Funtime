@@ -40,6 +40,10 @@ class DefaultAssetLibrary extends AssetLibrary {
 		type.set ("img/commando.png", Reflect.field (AssetType, "image".toUpperCase ()));
 		className.set ("img/commando2.png", __ASSET__img_commando2_png);
 		type.set ("img/commando2.png", Reflect.field (AssetType, "image".toUpperCase ()));
+		className.set ("img/Galaxy1.png", __ASSET__img_galaxy1_png);
+		type.set ("img/Galaxy1.png", Reflect.field (AssetType, "image".toUpperCase ()));
+		className.set ("img/Galaxy2.png", __ASSET__img_galaxy2_png);
+		type.set ("img/Galaxy2.png", Reflect.field (AssetType, "image".toUpperCase ()));
 		
 		
 		#elseif html5
@@ -48,6 +52,10 @@ class DefaultAssetLibrary extends AssetLibrary {
 		type.set ("img/commando.png", Reflect.field (AssetType, "image".toUpperCase ()));
 		path.set ("img/commando2.png", "img/commando2.png");
 		type.set ("img/commando2.png", Reflect.field (AssetType, "image".toUpperCase ()));
+		path.set ("img/Galaxy1.png", "img/Galaxy1.png");
+		type.set ("img/Galaxy1.png", Reflect.field (AssetType, "image".toUpperCase ()));
+		path.set ("img/Galaxy2.png", "img/Galaxy2.png");
+		type.set ("img/Galaxy2.png", Reflect.field (AssetType, "image".toUpperCase ()));
 		
 		
 		#else
@@ -493,9 +501,13 @@ class DefaultAssetLibrary extends AssetLibrary {
 
 class __ASSET__img_commando_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
 class __ASSET__img_commando2_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
+class __ASSET__img_galaxy1_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
+class __ASSET__img_galaxy2_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
 
 
 #elseif html5
+
+
 
 
 
