@@ -15,6 +15,7 @@ class Commando extends Sprite
 	var vx:Float;
 	var grav:Float;
 	var up:Bool;
+	var alive:Bool;
 	var sprite:Sprite;
 	
 	public function new() 
@@ -32,6 +33,7 @@ class Commando extends Sprite
 		vx = 2;
 		grav = .22;
 		up = false;
+		alive = true;
 	}
 	
 	public function move()
@@ -55,10 +57,13 @@ class Commando extends Sprite
 		this.vy *= .98;
 		this.x += this.vx;
 		this.vx *= .98;
-		if (vx < 1.7)
+		if (vx < 1.6 + Game.game.diff)
 		{
-			vx = 1.7;
-			//vx = .5;
+			vx = 1.6 + Game.game.diff;
+		}
+		if (vx > 3.2 + (Game.game.diff * 1.7))
+		{
+			vx = 3.2 + (Game.game.diff * 1.7);
 		}
 		//trace (vx);
 		//trace (vy);
@@ -66,6 +71,7 @@ class Commando extends Sprite
 		//trace (grav);
 		//trace (up);
 		//trace (isColliding());
+		//trace (Game.game.diff);
 	}
 	
 	public function moveLeft()
@@ -116,6 +122,12 @@ class Commando extends Sprite
 			}
 		}
 		return false;
+	}
+	
+	public function death()
+	{
+		//var d = Math.sqrt((this.x - game.badguy.x) * (this.x - badguy.x) + (this.y - badguy.y) * (this.y - badguy.y));
+		//trace ("Dead");
 	}
 	
 /*	public function onGround()

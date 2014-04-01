@@ -16,34 +16,24 @@ class Game extends Sprite
 	public static var game:Game;
 	public var tracks:List<Platform>;
 	public var badguys:List<Enemy>;
+	public var diff:Float;
 	var keys:Array<Int>;
 	var count:Int;
 	var time:Int;
 	var rand:Float;
-	//var comx:Float;
 	
 	public function new() 
 	{
 		super();
 		game = this;
+		diff = 0.1;
 		count = 0;
 		time = 0;
 		com = new Commando();
 		this.addChild(com);
 		tracks = new List<Platform>();
 		badguys = new List<Enemy>();
-		var track = new Platform(10, 400, 1400, 10);
-		tracks.push(track);
-		this.addChild(track);
-		var track = new Platform(game.com.x, 300, 1400, 10);
-		tracks.push(track);
-		this.addChild(track);
-		var track = new Platform(game.com.x, 200, 1400, 10);
-		tracks.push(track);
-		this.addChild(track);
-		var track = new Platform(game.com.x, 100, 1400, 10);
-		tracks.push(track);
-		this.addChild(track);
+		this.generateTracks();
 		Lib.current.stage.addEventListener(KeyboardEvent.KEY_DOWN, keyCheck);
 		Lib.current.stage.addEventListener(Event.ENTER_FRAME, act);
 		keys = new Array<Int>();
@@ -53,10 +43,9 @@ class Game extends Sprite
 	{
 		com.move();	
 		time--;
+		diffCount();
 		this.x = - game.com.x + 150;
 		rand = Math.random();
-		//game.comx = game.com.x;
-		//game.comx = game.comx - (game.comx % 1);
 		if ((count % 15 == 0) && (time < 0))
 		{
 			for (track in tracks)
@@ -64,28 +53,13 @@ class Game extends Sprite
 				game.removeChild(track);
 			}
 			tracks.clear();
-			var track = new Platform(game.com.x - 150, 375, 1800, 10);
-			tracks.push(track);
-			this.addChild(track);
-			var track = new Platform(game.com.x - 150, 275, 1800, 10);
-			tracks.push(track);
-			this.addChild(track);
-			var track = new Platform(game.com.x - 150, 175, 1800, 10);
-			tracks.push(track);
-			this.addChild(track);
-			var track = new Platform(game.com.x - 150, 75, 1800, 10);
-			tracks.push(track);
-			this.addChild(track);
-			//var track = new Platform(game.com.x + 150, 20, 100, 10);
-			//tracks.push(track);
-			//this.addChild(track);
+			this.generateTracks();
 			count = 0;
 			time = 20;
-			//trace (game.tracks.length);
 		}
 		
 		rand = rand * 100;
-		if (rand > 97)
+		if (rand > 98 - (diff * .65))
 		{
 			var badguy = new Enemy();
 			badguys.push(badguy);
@@ -113,4 +87,34 @@ class Game extends Sprite
 		if (e.keyCode == 83) game.com.fall();
 	}
 	
+	public function generateTracks()
+	{
+		var track = new Platform(game.com.x - 150, 375, 1800, 10);
+		tracks.push(track);
+		this.addChild(track);
+		var track = new Platform(game.com.x - 150, 275, 1800, 10);
+		tracks.push(track);
+		this.addChild(track);
+		var track = new Platform(game.com.x - 150, 175, 1800, 10);
+		tracks.push(track);
+		this.addChild(track);
+		var track = new Platform(game.com.x - 150, 75, 1800, 10);
+		tracks.push(track);
+		this.addChild(track);
+		//var track = new Platform(game.com.x + 150, 20, 100, 10);
+		//tracks.push(track);
+		//this.addChild(track);
+	}
+	
+	public function diffCount()
+	{
+		if (diff < 5.1)
+		{
+			diff += .00065;
+			if (diff > 5.1)
+			{
+				diff = 5.1;
+			}
+		}
+	}
 }

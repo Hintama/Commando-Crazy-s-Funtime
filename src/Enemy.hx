@@ -73,8 +73,11 @@ class Enemy extends Sprite
 		{
 			this.rotation = 180;
 		}
-		
-		
+	}
+	
+	public function kill()
+	{
+	
 	}
 	
 	public function die()
