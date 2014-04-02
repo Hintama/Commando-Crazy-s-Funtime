@@ -13,6 +13,7 @@ import haxe.rtti.CType.Platforms;
 class Game extends Sprite
 { 
 	public var com:Commando;
+	public var runner:Runner;
 	public var background:Background;
 	public var backgrounds:List<Background>;
 	public static var game:Game;
@@ -34,11 +35,18 @@ class Game extends Sprite
 		v = -100;
 		count = 0;
 		time = 0;
-		backgroundcounter = 0;
-		backgrounds = new List<Background>();
-		generateBackground(v);
+		//backgroundcounter = 0;
+		//backgrounds = new List<Background>();
+		//generateBackground(v);
 		com = new Commando();
 		this.addChild(com);
+		runner = new Runner();
+		this.addChild(runner);
+		backgroundrunner = new Runner();
+		backgrounds = new List<Background>();
+		background = new Background();
+		backgrounds.push(background);
+		this.addChild(background);
 		tracks = new List<Platform>();
 		badguys = new List<Enemy>();
 		this.generateTracks();
@@ -50,6 +58,8 @@ class Game extends Sprite
 	public function act(e : Event) :Void
 	{
 		com.move();	
+		runner.run();
+		backgroundrunner.run(
 		for (badguy in badguys)
 		{
 			badguy.hit();
@@ -58,7 +68,7 @@ class Game extends Sprite
 		diffCount();
 		this.x = - game.com.x + 150;
 		rand = Math.random();
-		if ((count % 15 == 0) && (time < 0))
+		/*if ((count % 15 == 0) && (time < 0))
 		{
 			for (track in tracks)
 			{
@@ -68,6 +78,24 @@ class Game extends Sprite
 			this.generateTracks();
 			count = 0;
 			time = 20;
+		}*/
+		
+		if (!(runner.trackTest()))
+		{
+			for (track in tracks)
+			{
+				game.removeChild(track);
+			}
+			tracks.clear();
+			this.generateTracks();
+		}
+		
+		if (!(runner.backgroundTest()))
+		{
+			background = new Background();
+			background.x = runner.x;
+			backgrounds.push(background);
+			this.addChild(background);
 		}
 		
 		rand = rand * 100;
@@ -102,16 +130,16 @@ class Game extends Sprite
 	
 	public function generateTracks()
 	{
-		var track = new Platform(game.com.x - 150, 375, 1800, 10);
+		var track = new Platform(game.com.x - 50, 375, 1800, 10);
 		tracks.push(track);
 		this.addChild(track);
-		var track = new Platform(game.com.x - 150, 225, 1800, 10);
+		var track = new Platform(game.com.x - 50, 225, 1800, 10);
 		tracks.push(track);
 		this.addChild(track);
 		/*var track = new Platform(game.com.x - 150, 175, 1800, 10);
 		tracks.push(track);
 		this.addChild(track);*/
-		var track = new Platform(game.com.x - 150, 75, 1800, 10);
+		var track = new Platform(game.com.x - 50, 75, 1800, 10);
 		tracks.push(track);
 		this.addChild(track);
 		//var track = new Platform(game.com.x + 150, 20, 100, 10);
@@ -119,26 +147,27 @@ class Game extends Sprite
 		//this.addChild(track);
 	}
 	
-	public function backgroundSpawn()
+	/*public function backgroundSpawn()
 	{
-		if ((((com.x + 800) % 800 = 0) && (backgroundcounter < 0)) || (((Game.game.com.x + 801) % 800 = 0) && (backgroundcounter < 0)) || (((Game.game.com.x + 799 % 800) = 0) && (backgroundcounter < 0)))
+		if ((backgroundcounter < 0)) 
 		{
-			v = com.x + 800;
+			v = Std.int(com.x);
 			generateBackground(v);
 			backgroundcounter = 25;
 		}
 		backgroundcounter--;
 	}
 	
-	public function generateBackground(v:Int)
+	public function generateBackground(v:Int) : Void
 	{
 		background = new Background();
-		if (com.x == 0)
+		background.x = v;
+		if (com.x == 100)
 		{
 			background.x = -100;
 		}
 		this.addChild(background);
-	}
+	}*/
 	
 	public function diffCount()
 	{

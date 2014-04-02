@@ -36,6 +36,10 @@ class DefaultAssetLibrary extends AssetLibrary {
 		
 		#if flash
 		
+		className.set ("img/Asteriod.png", __ASSET__img_asteriod_png);
+		type.set ("img/Asteriod.png", Reflect.field (AssetType, "image".toUpperCase ()));
+		className.set ("img/Asteriod2.png", __ASSET__img_asteriod2_png);
+		type.set ("img/Asteriod2.png", Reflect.field (AssetType, "image".toUpperCase ()));
 		className.set ("img/commando.png", __ASSET__img_commando_png);
 		type.set ("img/commando.png", Reflect.field (AssetType, "image".toUpperCase ()));
 		className.set ("img/commando2.png", __ASSET__img_commando2_png);
@@ -48,6 +52,10 @@ class DefaultAssetLibrary extends AssetLibrary {
 		
 		#elseif html5
 		
+		path.set ("img/Asteriod.png", "img/Asteriod.png");
+		type.set ("img/Asteriod.png", Reflect.field (AssetType, "image".toUpperCase ()));
+		path.set ("img/Asteriod2.png", "img/Asteriod2.png");
+		type.set ("img/Asteriod2.png", Reflect.field (AssetType, "image".toUpperCase ()));
 		path.set ("img/commando.png", "img/commando.png");
 		type.set ("img/commando.png", Reflect.field (AssetType, "image".toUpperCase ()));
 		path.set ("img/commando2.png", "img/commando2.png");
@@ -499,6 +507,8 @@ class DefaultAssetLibrary extends AssetLibrary {
 #if pixi
 #elseif flash
 
+class __ASSET__img_asteriod_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
+class __ASSET__img_asteriod2_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
 class __ASSET__img_commando_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
 class __ASSET__img_commando2_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
 class __ASSET__img_galaxy1_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
@@ -506,6 +516,8 @@ class __ASSET__img_galaxy2_png extends flash.display.BitmapData { public functio
 
 
 #elseif html5
+
+
 
 
 
