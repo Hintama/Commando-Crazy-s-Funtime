@@ -59,7 +59,7 @@ class Game extends Sprite
 	{
 		com.move();	
 		runner.run();
-		backgroundrunner.run(
+		backgroundrunner.run();
 		for (badguy in badguys)
 		{
 			badguy.hit();

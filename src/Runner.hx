@@ -35,6 +35,7 @@ class Runner extends Sprite
 	{
 		for (background in Game.game.backgrounds)
 		{
+			
 			if (this.hitTestObject(background))
 			{
 				return true;
