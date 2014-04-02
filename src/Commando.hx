@@ -17,6 +17,7 @@ class Commando extends Sprite
 	var up:Bool;
 	var alive:Bool;
 	var sprite:Sprite;
+	var gravcon:Float;
 	
 	public function new() 
 	{
@@ -31,7 +32,8 @@ class Commando extends Sprite
 		this.y = 125;
 		vy = 0;
 		vx = 2;
-		grav = .22;
+		gravcon = .23;
+		grav = gravcon;
 		up = false;
 		alive = true;
 	}
@@ -41,11 +43,11 @@ class Commando extends Sprite
 
 		if (up)
 		{
-			grav = -.22;
+			grav = -gravcon;
 		}
 		if (!(up))
 		{
-			grav = .22;
+			grav = gravcon;
 		}
 		if (isColliding())
 		{

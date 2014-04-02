@@ -36,8 +36,6 @@ class Game extends Sprite
 		v = -100;
 		count = 0;
 		time = 0;
-		com = new Commando();
-		this.addChild(com);
 		runner = new Runner();
 		this.addChild(runner);
 		runner.y = 223;
@@ -46,9 +44,19 @@ class Game extends Sprite
 		background = new Background();
 		//backgrounds.push(background);
 		this.addChild(background);
+		com = new Commando();
+		this.addChild(com);
 		tracks = new List<Platform>();
 		badguys = new List<Enemy>();
-		this.generateTracks();
+		var track = new Platform(game.com.x -150, 375, 1300, 10);
+		tracks.push(track);
+		this.addChild(track);
+		var track = new Platform(game.com.x - 150, 225, 1300, 10);
+		tracks.push(track);
+		this.addChild(track);
+		var track = new Platform(game.com.x - 150, 75, 1300, 10);
+		tracks.push(track);
+		this.addChild(track);
 		Lib.current.stage.addEventListener(KeyboardEvent.KEY_DOWN, keyCheck);
 		Lib.current.stage.addEventListener(Event.ENTER_FRAME, act);
 		keys = new Array<Int>();
@@ -84,9 +92,11 @@ class Game extends Sprite
 		{
 			for (track in tracks)
 			{
-				game.removeChild(track);
+				if (track.x < game.com.x - 1300)
+				{
+					game.removeChild(track);
+				}
 			}
-			tracks.clear();
 			this.generateTracks();
 		}
 		
@@ -130,16 +140,16 @@ class Game extends Sprite
 	
 	public function generateTracks()
 	{
-		var track = new Platform(game.com.x - 50, 375, 1300, 10);
+		var track = new Platform(game.com.x + 678, 375, 1300, 10);
 		tracks.push(track);
 		this.addChild(track);
-		var track = new Platform(game.com.x - 50, 225, 1300, 10);
+		var track = new Platform(game.com.x + 678, 225, 1300, 10);
 		tracks.push(track);
 		this.addChild(track);
 		/*var track = new Platform(game.com.x - 150, 175, 1800, 10);
 		tracks.push(track);
 		this.addChild(track);*/
-		var track = new Platform(game.com.x - 50, 75, 1300, 10);
+		var track = new Platform(game.com.x + 678, 75, 1300, 10);
 		tracks.push(track);
 		this.addChild(track);
 		//var track = new Platform(game.com.x + 150, 20, 100, 10);
