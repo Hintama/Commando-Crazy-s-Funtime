@@ -14,6 +14,7 @@ class Game extends Sprite
 { 
 	public var com:Commando;
 	public var runner:Runner;
+	public var backgroundrunner:Runner;
 	public var background:Background;
 	public var backgrounds:List<Background>;
 	public static var game:Game;
@@ -35,17 +36,15 @@ class Game extends Sprite
 		v = -100;
 		count = 0;
 		time = 0;
-		//backgroundcounter = 0;
-		//backgrounds = new List<Background>();
-		//generateBackground(v);
 		com = new Commando();
 		this.addChild(com);
 		runner = new Runner();
 		this.addChild(runner);
+		runner.y = 223;
 		backgroundrunner = new Runner();
-		backgrounds = new List<Background>();
+		//backgrounds = new List<Background>();
 		background = new Background();
-		backgrounds.push(background);
+		//backgrounds.push(background);
 		this.addChild(background);
 		tracks = new List<Platform>();
 		badguys = new List<Enemy>();
@@ -59,7 +58,7 @@ class Game extends Sprite
 	{
 		com.move();	
 		runner.run();
-		backgroundrunner.run(
+		backgroundrunner.run();
 		for (badguy in badguys)
 		{
 			badguy.hit();
@@ -67,6 +66,7 @@ class Game extends Sprite
 		time--;
 		diffCount();
 		this.x = - game.com.x + 150;
+		background.x = this.x;
 		rand = Math.random();
 		/*if ((count % 15 == 0) && (time < 0))
 		{
@@ -90,10 +90,10 @@ class Game extends Sprite
 			this.generateTracks();
 		}
 		
-		if (!(runner.backgroundTest()))
+		if (!(backgroundrunner.backgroundTest()))
 		{
 			background = new Background();
-			background.x = runner.x;
+			background.x = backgroundrunner.x;
 			backgrounds.push(background);
 			this.addChild(background);
 		}
@@ -130,16 +130,16 @@ class Game extends Sprite
 	
 	public function generateTracks()
 	{
-		var track = new Platform(game.com.x - 50, 375, 1800, 10);
+		var track = new Platform(game.com.x - 50, 375, 1300, 10);
 		tracks.push(track);
 		this.addChild(track);
-		var track = new Platform(game.com.x - 50, 225, 1800, 10);
+		var track = new Platform(game.com.x - 50, 225, 1300, 10);
 		tracks.push(track);
 		this.addChild(track);
 		/*var track = new Platform(game.com.x - 150, 175, 1800, 10);
 		tracks.push(track);
 		this.addChild(track);*/
-		var track = new Platform(game.com.x - 50, 75, 1800, 10);
+		var track = new Platform(game.com.x - 50, 75, 1300, 10);
 		tracks.push(track);
 		this.addChild(track);
 		//var track = new Platform(game.com.x + 150, 20, 100, 10);

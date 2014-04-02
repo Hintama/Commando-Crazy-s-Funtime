@@ -11,7 +11,6 @@ class Runner extends Sprite
 	public function new() 
 	{
 		super();
-		this.y = 223;
 	}
 	
 	public function run()
@@ -33,15 +32,15 @@ class Runner extends Sprite
 	
 	public function backgroundTest()
 	{
-		for (background in Game.game.backgrounds)
-		{
-			if (this.hitTestObject(background))
-			{
+		//for (background in Game.game.backgrounds)
+		//{
+		//	if (this.hitTestObject(background))
+		//	{
 				return true;
-			}
-		}
+		//	}
+		//}
 		
-		return false;
+		//return false;
 	}
 	
 }
