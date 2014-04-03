@@ -18,10 +18,14 @@ class Background extends Sprite
 		super();
 		var img = new Bitmap(Assets.getBitmapData("img/Galaxy2.png"));
 		sprite = new Sprite();
+		sprite.width = 980;
+		sprite.height = 485;
 		sprite.addChild(img);
 		this.addChild(sprite);
 		this.height = 485;
 		this.width = 980;
+		this.x = Game.game.backgroundrunner.x;
+		this.y = 200;
 	}
 	
 }

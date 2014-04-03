@@ -75,13 +75,6 @@ class Commando extends Sprite
 		{
 			this.y = 480;
 		}
-		//trace (vx);
-		//trace (vy);
-		//trace (up);
-		//trace (grav);
-		//trace (up);
-		//trace (isColliding());
-		//trace (Game.game.diff);
 	}
 	
 	public function moveLeft()
@@ -139,13 +132,4 @@ class Commando extends Sprite
 		//var d = Math.sqrt((this.x - game.badguy.x) * (this.x - badguy.x) + (this.y - badguy.y) * (this.y - badguy.y));
 		//trace ("Dead");
 	}
-	
-/*	public function onGround()
-	{
-		//if (isColliding()) return false;
-		this.y += .5;
-		var hit = isColliding();
-		this.y -= .5;
-		return hit;
-	}*/
 }

@@ -32,7 +32,7 @@ class Game extends Sprite
 	{
 		super();
 		game = this;
-		diff = 0.1;
+		diff = .1;
 		v = -100;
 		count = 0;
 		time = 0;
@@ -40,9 +40,9 @@ class Game extends Sprite
 		this.addChild(runner);
 		runner.y = 223;
 		backgroundrunner = new Runner();
-		//backgrounds = new List<Background>();
+		backgrounds = new List<Background>();
 		background = new Background();
-		//backgrounds.push(background);
+		backgrounds.push(background);
 		this.addChild(background);
 		com = new Commando();
 		this.addChild(com);
@@ -76,17 +76,6 @@ class Game extends Sprite
 		this.x = - game.com.x + 150;
 		background.x = this.x;
 		rand = Math.random();
-		/*if ((count % 15 == 0) && (time < 0))
-		{
-			for (track in tracks)
-			{
-				game.removeChild(track);
-			}
-			tracks.clear();
-			this.generateTracks();
-			count = 0;
-			time = 20;
-		}*/
 		
 		if (!(runner.trackTest()))
 		{
@@ -94,7 +83,7 @@ class Game extends Sprite
 			{
 				if (track.x < game.com.x - 1300)
 				{
-					game.removeChild(track);
+					game.tracks.remove(track);
 				}
 			}
 			this.generateTracks();
@@ -102,10 +91,16 @@ class Game extends Sprite
 		
 		if (!(backgroundrunner.backgroundTest()))
 		{
-			background = new Background();
-			background.x = backgroundrunner.x;
-			backgrounds.push(background);
-			this.addChild(background);
+			for (background in backgrounds)
+			{
+				if (background.x < game.com.x - 1300)
+				{
+					game.backgrounds.remove(background);
+				}
+				background = new Background();
+				backgrounds.push(background);
+				this.addChild(background);
+			}
 		}
 		
 		rand = rand * 100;
@@ -114,7 +109,6 @@ class Game extends Sprite
 			var badguy = new Enemy();
 			badguys.push(badguy);
 			this.addChild(badguy);
-			//trace(rand);
 		}
 		count++;
 		
@@ -152,32 +146,7 @@ class Game extends Sprite
 		var track = new Platform(game.com.x + 678, 75, 1300, 10);
 		tracks.push(track);
 		this.addChild(track);
-		//var track = new Platform(game.com.x + 150, 20, 100, 10);
-		//tracks.push(track);
-		//this.addChild(track);
 	}
-	
-	/*public function backgroundSpawn()
-	{
-		if ((backgroundcounter < 0)) 
-		{
-			v = Std.int(com.x);
-			generateBackground(v);
-			backgroundcounter = 25;
-		}
-		backgroundcounter--;
-	}
-	
-	public function generateBackground(v:Int) : Void
-	{
-		background = new Background();
-		background.x = v;
-		if (com.x == 100)
-		{
-			background.x = -100;
-		}
-		this.addChild(background);
-	}*/
 	
 	public function diffCount()
 	{
