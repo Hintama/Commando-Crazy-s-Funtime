@@ -40,15 +40,15 @@ class Runner extends Sprite
 	
 	public function backgroundTest()
 	{
-		//for (background in Game.game.backgrounds)
-		//{
-		//	if (this.hitTestObject(background))
-		//	{
+		for (background in Game.game.backgrounds)
+		{
+			if (this.hitTestObject(background))
+			{
 				return true;
-		//	}
-		//}
+			}
+		}
 		
-		//return false;
+		return false;
 	}
 	
 }
