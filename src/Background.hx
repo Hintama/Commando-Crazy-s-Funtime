@@ -20,6 +20,8 @@ class Background extends Sprite
 		sprite = new Sprite();
 		sprite.addChild(img);
 		this.addChild(sprite);
+		this.height = 485;
+		this.width = 980;
 	}
 	
 }

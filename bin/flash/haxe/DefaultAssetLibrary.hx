@@ -40,6 +40,8 @@ class DefaultAssetLibrary extends AssetLibrary {
 		type.set ("img/Asteriod.png", Reflect.field (AssetType, "image".toUpperCase ()));
 		className.set ("img/Asteriod2.png", __ASSET__img_asteriod2_png);
 		type.set ("img/Asteriod2.png", Reflect.field (AssetType, "image".toUpperCase ()));
+		className.set ("img/Asteriod3.png", __ASSET__img_asteriod3_png);
+		type.set ("img/Asteriod3.png", Reflect.field (AssetType, "image".toUpperCase ()));
 		className.set ("img/commando.png", __ASSET__img_commando_png);
 		type.set ("img/commando.png", Reflect.field (AssetType, "image".toUpperCase ()));
 		className.set ("img/commando2.png", __ASSET__img_commando2_png);
@@ -48,6 +50,10 @@ class DefaultAssetLibrary extends AssetLibrary {
 		type.set ("img/Galaxy1.png", Reflect.field (AssetType, "image".toUpperCase ()));
 		className.set ("img/Galaxy2.png", __ASSET__img_galaxy2_png);
 		type.set ("img/Galaxy2.png", Reflect.field (AssetType, "image".toUpperCase ()));
+		className.set ("SXF/Russian.wav", __ASSET__sxf_russian_wav);
+		type.set ("SXF/Russian.wav", Reflect.field (AssetType, "sound".toUpperCase ()));
+		className.set ("SXF/TechoIntro.wav", __ASSET__sxf_techointro_wav);
+		type.set ("SXF/TechoIntro.wav", Reflect.field (AssetType, "sound".toUpperCase ()));
 		
 		
 		#elseif html5
@@ -56,6 +62,8 @@ class DefaultAssetLibrary extends AssetLibrary {
 		type.set ("img/Asteriod.png", Reflect.field (AssetType, "image".toUpperCase ()));
 		path.set ("img/Asteriod2.png", "img/Asteriod2.png");
 		type.set ("img/Asteriod2.png", Reflect.field (AssetType, "image".toUpperCase ()));
+		path.set ("img/Asteriod3.png", "img/Asteriod3.png");
+		type.set ("img/Asteriod3.png", Reflect.field (AssetType, "image".toUpperCase ()));
 		path.set ("img/commando.png", "img/commando.png");
 		type.set ("img/commando.png", Reflect.field (AssetType, "image".toUpperCase ()));
 		path.set ("img/commando2.png", "img/commando2.png");
@@ -64,6 +72,10 @@ class DefaultAssetLibrary extends AssetLibrary {
 		type.set ("img/Galaxy1.png", Reflect.field (AssetType, "image".toUpperCase ()));
 		path.set ("img/Galaxy2.png", "img/Galaxy2.png");
 		type.set ("img/Galaxy2.png", Reflect.field (AssetType, "image".toUpperCase ()));
+		path.set ("SXF/Russian.wav", "SXF/Russian.wav");
+		type.set ("SXF/Russian.wav", Reflect.field (AssetType, "sound".toUpperCase ()));
+		path.set ("SXF/TechoIntro.wav", "SXF/TechoIntro.wav");
+		type.set ("SXF/TechoIntro.wav", Reflect.field (AssetType, "sound".toUpperCase ()));
 		
 		
 		#else
@@ -509,13 +521,19 @@ class DefaultAssetLibrary extends AssetLibrary {
 
 class __ASSET__img_asteriod_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
 class __ASSET__img_asteriod2_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
+class __ASSET__img_asteriod3_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
 class __ASSET__img_commando_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
 class __ASSET__img_commando2_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
 class __ASSET__img_galaxy1_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
 class __ASSET__img_galaxy2_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
+class __ASSET__sxf_russian_wav extends flash.media.Sound { }
+class __ASSET__sxf_techointro_wav extends flash.media.Sound { }
 
 
 #elseif html5
+
+
+
 
 
 
