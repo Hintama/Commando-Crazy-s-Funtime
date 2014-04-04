@@ -49,14 +49,6 @@ class Enemy extends Sprite
 		{
 			this.y = 272;
 		}
-		/*if ((ra > 4) && (ra < 5))
-		{
-			this.y = 239;
-		}
-		if ((ra > 5) && (ra < 6))
-		{
-			this.y = 322;
-		}*/
 		if ((ra > 4) && (ra < 5))
 		{
 			this.y = 339;

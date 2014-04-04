@@ -50,6 +50,12 @@ class DefaultAssetLibrary extends AssetLibrary {
 		type.set ("img/Galaxy1.png", Reflect.field (AssetType, "image".toUpperCase ()));
 		className.set ("img/Galaxy2.png", __ASSET__img_galaxy2_png);
 		type.set ("img/Galaxy2.png", Reflect.field (AssetType, "image".toUpperCase ()));
+		className.set ("img/Galaxy3.png", __ASSET__img_galaxy3_png);
+		type.set ("img/Galaxy3.png", Reflect.field (AssetType, "image".toUpperCase ()));
+		className.set ("img/Menu1.png", __ASSET__img_menu1_png);
+		type.set ("img/Menu1.png", Reflect.field (AssetType, "image".toUpperCase ()));
+		className.set ("img/Menu2.png", __ASSET__img_menu2_png);
+		type.set ("img/Menu2.png", Reflect.field (AssetType, "image".toUpperCase ()));
 		
 		
 		#elseif html5
@@ -68,6 +74,12 @@ class DefaultAssetLibrary extends AssetLibrary {
 		type.set ("img/Galaxy1.png", Reflect.field (AssetType, "image".toUpperCase ()));
 		path.set ("img/Galaxy2.png", "img/Galaxy2.png");
 		type.set ("img/Galaxy2.png", Reflect.field (AssetType, "image".toUpperCase ()));
+		path.set ("img/Galaxy3.png", "img/Galaxy3.png");
+		type.set ("img/Galaxy3.png", Reflect.field (AssetType, "image".toUpperCase ()));
+		path.set ("img/Menu1.png", "img/Menu1.png");
+		type.set ("img/Menu1.png", Reflect.field (AssetType, "image".toUpperCase ()));
+		path.set ("img/Menu2.png", "img/Menu2.png");
+		type.set ("img/Menu2.png", Reflect.field (AssetType, "image".toUpperCase ()));
 		
 		
 		#else
@@ -518,9 +530,15 @@ class __ASSET__img_commando_png extends flash.display.BitmapData { public functi
 class __ASSET__img_commando2_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
 class __ASSET__img_galaxy1_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
 class __ASSET__img_galaxy2_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
+class __ASSET__img_galaxy3_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
+class __ASSET__img_menu1_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
+class __ASSET__img_menu2_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
 
 
 #elseif html5
+
+
+
 
 
 

@@ -30,7 +30,6 @@ class Main extends Sprite
 		
 		newGame = new Game();
 		this.addChild(newGame);
-		
 		// (your code here)
 		
 		// Stage:

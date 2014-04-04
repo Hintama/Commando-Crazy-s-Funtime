@@ -21,8 +21,6 @@ class Game extends Sprite
 	public var tracks:List<Platform>;
 	public var badguys:List<Enemy>;
 	public var diff:Float;
-	var backgroundcounter:Int;
-	var keys:Array<Int>;
 	var count:Int;
 	var time:Int;
 	var rand:Float;
@@ -59,7 +57,6 @@ class Game extends Sprite
 		this.addChild(track);
 		Lib.current.stage.addEventListener(KeyboardEvent.KEY_DOWN, keyCheck);
 		Lib.current.stage.addEventListener(Event.ENTER_FRAME, act);
-		keys = new Array<Int>();
 	}
 	
 	public function act(e : Event) :Void
@@ -111,6 +108,7 @@ class Game extends Sprite
 			this.addChild(badguy);
 		}
 		count++;
+		trace ("frame");
 		
 		for (badguy in badguys)
 		{
@@ -123,8 +121,7 @@ class Game extends Sprite
 	
 	public function keyCheck(e : KeyboardEvent)
 	{
-		//trace(e.keyCode);
-		//if (! keyCheck(e.keyCode)) keys.push(e.keyCode);
+
 		if (e.keyCode == 65) game.com.moveLeft();
 		if (e.keyCode == 68) game.com.moveRight();
 		if (e.keyCode == 87) game.com.swtch();
@@ -140,9 +137,6 @@ class Game extends Sprite
 		var track = new Platform(game.com.x + 678, 225, 1300, 10);
 		tracks.push(track);
 		this.addChild(track);
-		/*var track = new Platform(game.com.x - 150, 175, 1800, 10);
-		tracks.push(track);
-		this.addChild(track);*/
 		var track = new Platform(game.com.x + 678, 75, 1300, 10);
 		tracks.push(track);
 		this.addChild(track);
