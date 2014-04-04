@@ -42,14 +42,36 @@ class DefaultAssetLibrary extends AssetLibrary {
 		type.set ("img/Asteriod2.png", Reflect.field (AssetType, "image".toUpperCase ()));
 		className.set ("img/Asteriod3.png", __ASSET__img_asteriod3_png);
 		type.set ("img/Asteriod3.png", Reflect.field (AssetType, "image".toUpperCase ()));
+		className.set ("img/BlankBackground.png", __ASSET__img_blankbackground_png);
+		type.set ("img/BlankBackground.png", Reflect.field (AssetType, "image".toUpperCase ()));
 		className.set ("img/commando.png", __ASSET__img_commando_png);
 		type.set ("img/commando.png", Reflect.field (AssetType, "image".toUpperCase ()));
 		className.set ("img/commando2.png", __ASSET__img_commando2_png);
 		type.set ("img/commando2.png", Reflect.field (AssetType, "image".toUpperCase ()));
+		className.set ("img/ControlButton.png", __ASSET__img_controlbutton_png);
+		type.set ("img/ControlButton.png", Reflect.field (AssetType, "image".toUpperCase ()));
+		className.set ("img/ControlButton2.png", __ASSET__img_controlbutton2_png);
+		type.set ("img/ControlButton2.png", Reflect.field (AssetType, "image".toUpperCase ()));
 		className.set ("img/Galaxy1.png", __ASSET__img_galaxy1_png);
 		type.set ("img/Galaxy1.png", Reflect.field (AssetType, "image".toUpperCase ()));
 		className.set ("img/Galaxy2.png", __ASSET__img_galaxy2_png);
 		type.set ("img/Galaxy2.png", Reflect.field (AssetType, "image".toUpperCase ()));
+		className.set ("img/Galaxy3.png", __ASSET__img_galaxy3_png);
+		type.set ("img/Galaxy3.png", Reflect.field (AssetType, "image".toUpperCase ()));
+		className.set ("img/Logo.png", __ASSET__img_logo_png);
+		type.set ("img/Logo.png", Reflect.field (AssetType, "image".toUpperCase ()));
+		className.set ("img/Menu1.png", __ASSET__img_menu1_png);
+		type.set ("img/Menu1.png", Reflect.field (AssetType, "image".toUpperCase ()));
+		className.set ("img/Menu2.png", __ASSET__img_menu2_png);
+		type.set ("img/Menu2.png", Reflect.field (AssetType, "image".toUpperCase ()));
+		className.set ("img/PlayButton.png", __ASSET__img_playbutton_png);
+		type.set ("img/PlayButton.png", Reflect.field (AssetType, "image".toUpperCase ()));
+		className.set ("img/PlayButton2.png", __ASSET__img_playbutton2_png);
+		type.set ("img/PlayButton2.png", Reflect.field (AssetType, "image".toUpperCase ()));
+		className.set ("img/StoryButton.png", __ASSET__img_storybutton_png);
+		type.set ("img/StoryButton.png", Reflect.field (AssetType, "image".toUpperCase ()));
+		className.set ("img/StoryButton2.png", __ASSET__img_storybutton2_png);
+		type.set ("img/StoryButton2.png", Reflect.field (AssetType, "image".toUpperCase ()));
 		className.set ("SXF/Russian.wav", __ASSET__sxf_russian_wav);
 		type.set ("SXF/Russian.wav", Reflect.field (AssetType, "sound".toUpperCase ()));
 		className.set ("SXF/TechoIntro.wav", __ASSET__sxf_techointro_wav);
@@ -64,14 +86,36 @@ class DefaultAssetLibrary extends AssetLibrary {
 		type.set ("img/Asteriod2.png", Reflect.field (AssetType, "image".toUpperCase ()));
 		path.set ("img/Asteriod3.png", "img/Asteriod3.png");
 		type.set ("img/Asteriod3.png", Reflect.field (AssetType, "image".toUpperCase ()));
+		path.set ("img/BlankBackground.png", "img/BlankBackground.png");
+		type.set ("img/BlankBackground.png", Reflect.field (AssetType, "image".toUpperCase ()));
 		path.set ("img/commando.png", "img/commando.png");
 		type.set ("img/commando.png", Reflect.field (AssetType, "image".toUpperCase ()));
 		path.set ("img/commando2.png", "img/commando2.png");
 		type.set ("img/commando2.png", Reflect.field (AssetType, "image".toUpperCase ()));
+		path.set ("img/ControlButton.png", "img/ControlButton.png");
+		type.set ("img/ControlButton.png", Reflect.field (AssetType, "image".toUpperCase ()));
+		path.set ("img/ControlButton2.png", "img/ControlButton2.png");
+		type.set ("img/ControlButton2.png", Reflect.field (AssetType, "image".toUpperCase ()));
 		path.set ("img/Galaxy1.png", "img/Galaxy1.png");
 		type.set ("img/Galaxy1.png", Reflect.field (AssetType, "image".toUpperCase ()));
 		path.set ("img/Galaxy2.png", "img/Galaxy2.png");
 		type.set ("img/Galaxy2.png", Reflect.field (AssetType, "image".toUpperCase ()));
+		path.set ("img/Galaxy3.png", "img/Galaxy3.png");
+		type.set ("img/Galaxy3.png", Reflect.field (AssetType, "image".toUpperCase ()));
+		path.set ("img/Logo.png", "img/Logo.png");
+		type.set ("img/Logo.png", Reflect.field (AssetType, "image".toUpperCase ()));
+		path.set ("img/Menu1.png", "img/Menu1.png");
+		type.set ("img/Menu1.png", Reflect.field (AssetType, "image".toUpperCase ()));
+		path.set ("img/Menu2.png", "img/Menu2.png");
+		type.set ("img/Menu2.png", Reflect.field (AssetType, "image".toUpperCase ()));
+		path.set ("img/PlayButton.png", "img/PlayButton.png");
+		type.set ("img/PlayButton.png", Reflect.field (AssetType, "image".toUpperCase ()));
+		path.set ("img/PlayButton2.png", "img/PlayButton2.png");
+		type.set ("img/PlayButton2.png", Reflect.field (AssetType, "image".toUpperCase ()));
+		path.set ("img/StoryButton.png", "img/StoryButton.png");
+		type.set ("img/StoryButton.png", Reflect.field (AssetType, "image".toUpperCase ()));
+		path.set ("img/StoryButton2.png", "img/StoryButton2.png");
+		type.set ("img/StoryButton2.png", Reflect.field (AssetType, "image".toUpperCase ()));
 		path.set ("SXF/Russian.wav", "SXF/Russian.wav");
 		type.set ("SXF/Russian.wav", Reflect.field (AssetType, "sound".toUpperCase ()));
 		path.set ("SXF/TechoIntro.wav", "SXF/TechoIntro.wav");
@@ -522,15 +566,37 @@ class DefaultAssetLibrary extends AssetLibrary {
 class __ASSET__img_asteriod_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
 class __ASSET__img_asteriod2_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
 class __ASSET__img_asteriod3_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
+class __ASSET__img_blankbackground_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
 class __ASSET__img_commando_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
 class __ASSET__img_commando2_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
+class __ASSET__img_controlbutton_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
+class __ASSET__img_controlbutton2_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
 class __ASSET__img_galaxy1_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
 class __ASSET__img_galaxy2_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
+class __ASSET__img_galaxy3_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
+class __ASSET__img_logo_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
+class __ASSET__img_menu1_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
+class __ASSET__img_menu2_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
+class __ASSET__img_playbutton_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
+class __ASSET__img_playbutton2_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
+class __ASSET__img_storybutton_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
+class __ASSET__img_storybutton2_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
 class __ASSET__sxf_russian_wav extends flash.media.Sound { }
 class __ASSET__sxf_techointro_wav extends flash.media.Sound { }
 
 
 #elseif html5
+
+
+
+
+
+
+
+
+
+
+
 
 
 

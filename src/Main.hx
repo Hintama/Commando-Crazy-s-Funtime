@@ -13,7 +13,7 @@ import flash.events.KeyboardEvent;
 class Main extends Sprite 
 {	
 	var inited:Bool;
-	public var newGame:Game;
+	public var newMenu:Menu;
 
 	/* ENTRY POINT */
 	
@@ -28,9 +28,10 @@ class Main extends Sprite
 		if (inited) return;
 		inited = true;
 		
-		newGame = new Game();
-		this.addChild(newGame);
-		
+		newMenu = new Menu();
+		this.addChild(newMenu);
+		//newGame = new Game();
+		//this.addChild(newGame);
 		// (your code here)
 		
 		// Stage:

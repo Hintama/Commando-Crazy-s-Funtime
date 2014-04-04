@@ -17,6 +17,7 @@ class Commando extends Sprite
 	var up:Bool;
 	var alive:Bool;
 	var sprite:Sprite;
+	var sprite2:Sprite;
 	var gravcon:Float;
 	
 	public function new() 
@@ -24,6 +25,7 @@ class Commando extends Sprite
 		super();
 		var img = new Bitmap(Assets.getBitmapData("img/commando2.png"));
 		sprite = new Sprite();
+		sprite2 = new Sprite();
 		sprite.addChild(img);
 		this.addChild(sprite);
 		//this.graphics.beginFill(0xFFFFFF);
