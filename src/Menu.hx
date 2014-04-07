@@ -16,9 +16,6 @@ import openfl.Assets;
  */
 class Menu extends Sprite
 {
-	var play:Bool;
-	var info:Bool;
-	var controls:Bool;
 	var background:BitmapData;
 	var logosprite:Sprite;
 	var img:BitmapData;
@@ -29,6 +26,8 @@ class Menu extends Sprite
 	var storybutton:BitmapData;
 	var controlsbuttonsprite:Sprite;
 	var controlsbutton:BitmapData;
+	var controlsmenu:Controlsmenu;
+	public var controls:Bool;
 	
 
 	public function new() 
@@ -60,6 +59,12 @@ class Menu extends Sprite
 		controlsbuttonsprite.x = 300;
 		controlsbuttonsprite.y = 340;
 		this.addChild(controlsbuttonsprite);
+		controlsbuttonsprite.addEventListener(MouseEvent.MOUSE_DOWN, openControlsmenu); 
+	}
+	
+	public function openControlsmenu(e)
+	{
+		controls = true;
 	}
 	
 }

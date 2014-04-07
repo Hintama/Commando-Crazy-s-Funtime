@@ -16,7 +16,7 @@ class Background extends Sprite
 	public function new() 
 	{
 		super();
-		var img = new Bitmap(Assets.getBitmapData("img/Galaxy2.png"));
+		var img = new Bitmap(Assets.getBitmapData("img/Galaxy3.png"));
 		sprite = new Sprite();
 		sprite.width = 980;
 		sprite.height = 485;
