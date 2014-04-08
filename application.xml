@@ -3,7 +3,7 @@
 	<!-- NMML reference: https://gist.github.com/1763850 -->
 	
 	<!-- metadata, make sure 'package' is at least 3 segments (ie. com.mycompany.myproject) -->
-	<meta title="Commando-Crazy's-Funtime" package="CommandoCrazysFuntime" version="1.0.0" company="Trey Clark" />
+	<meta title="Henchman-Run" package="HenchmanRun" version="1.0.0" company="Trey Clark" />
 	
 	<!-- output -->
 	<app main="Main" file="CommandoCrazysFuntime" path="bin" />
@@ -20,7 +20,7 @@
 	<!-- assets -->
 	<icon path="assets/openfl.svg" />
 	<assets path="assets/img" rename="img" />
-	<assets path="assets/SXF" rename="SXF" />
+	<assets path="assets/SXF" rename="SXF" include="*" type="audio"/>
 	
 	<!-- optimize output
 	<haxeflag name="-dce full" /> -->

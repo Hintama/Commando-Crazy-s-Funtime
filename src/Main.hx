@@ -4,6 +4,7 @@ import flash.display.Sprite;
 import flash.events.Event;
 import flash.Lib;
 import flash.events.KeyboardEvent;
+import openfl.Assets;
 
 /**
  * ...
@@ -30,6 +31,8 @@ class Main extends Sprite
 		
 		canvas = new Canvas();
 		this.addChild(canvas);
+		var background = Assets.getSound("SXF/TechoIntro.wav");
+		background.play(0,-1);
 		//newGame = new Game();
 		//this.addChild(newGame);
 		// (your code here)

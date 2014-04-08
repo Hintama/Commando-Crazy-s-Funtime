@@ -16,7 +16,7 @@ class ApplicationMain {
 		
 		var call_real = true;
 		
-		//nme.Lib.setPackage("Trey Clark", "CommandoCrazysFuntime", "CommandoCrazysFuntime", "1.0.0");
+		//nme.Lib.setPackage("Trey Clark", "CommandoCrazysFuntime", "HenchmanRun", "1.0.0");
 		
 		
 		var loaded:Int = flash.Lib.current.loaderInfo.bytesLoaded;

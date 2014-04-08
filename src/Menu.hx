@@ -12,7 +12,7 @@ import openfl.Assets;
 
 /**
  * ...
- * @author ...
+ * @author Trey Clark
  */
 class Menu extends Sprite
 {
