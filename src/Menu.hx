@@ -20,13 +20,14 @@ class Menu extends Sprite
 	var logosprite:Sprite;
 	var img:BitmapData;
 	var logo:BitmapData;
+	var controlsmenusprite:Sprite;
+	var controlsmenu:BitmapData;
 	var playbuttonsprite:Sprite;
 	var playbutton:BitmapData;
 	var storybuttonsprite:Sprite;
 	var storybutton:BitmapData;
 	var controlsbuttonsprite:Sprite;
 	var controlsbutton:BitmapData;
-	var controlsmenu:Controlsmenu;
 	public var controls:Bool;
 	
 
@@ -59,12 +60,33 @@ class Menu extends Sprite
 		controlsbuttonsprite.x = 300;
 		controlsbuttonsprite.y = 340;
 		this.addChild(controlsbuttonsprite);
-		controlsbuttonsprite.addEventListener(MouseEvent.MOUSE_DOWN, openControlsmenu); 
+		controlsbuttonsprite.addEventListener(MouseEvent.CLICK, openControlsmenu);
+		controlsmenusprite = new Sprite();
+		var img = new Bitmap(Assets.getBitmapData("img/Menu2.png"));
+		controlsmenusprite.addChild(img);
+		controlsmenusprite.y = -480;
+		this.addChild(controlsmenusprite);
+		Lib.current.stage.addEventListener(Event.ENTER_FRAME, act);
 	}
 	
 	public function openControlsmenu(e)
 	{
 		controls = true;
+		trace (controls);
 	}
 	
+	public function act(e : Event) : Void
+	{
+		if (controls)
+		{
+			this.y = 480;
+			controls = false;
+		}
+		
+		if (menuup)
+		{
+			this.y = 0;
+			menuup = false;
+		}
+	}
 }

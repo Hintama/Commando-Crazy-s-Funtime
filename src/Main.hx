@@ -14,7 +14,7 @@ import openfl.Assets;
 class Main extends Sprite 
 {	
 	var inited:Bool;
-	public var canvas:Canvas;
+	public var menu:Menu;
 
 	/* ENTRY POINT */
 	
@@ -29,10 +29,10 @@ class Main extends Sprite
 		if (inited) return;
 		inited = true;
 		
-		canvas = new Canvas();
-		this.addChild(canvas);
+		menu = new Menu();
+		this.addChild(menu);
 		var background = Assets.getSound("SXF/TechoIntro.wav");
-		background.play(0,-1);
+		background.play(0, -1);
 		//newGame = new Game();
 		//this.addChild(newGame);
 		// (your code here)
